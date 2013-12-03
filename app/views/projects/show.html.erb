@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Country</th>
+      <th>University</th>
+      <th>Major</th>
+      <th>Description</th>
+      <th>Owner</th>
+      <th>Contact</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @project.name %></td>
+        <td><div class="small-6 columns"><%= image_tag @project.photo.url(:small) %></div></td>
+        <td><%= @project.country %></td>
+        <td><%= @project.university %></td>
+        <td><%= @project.major %></td>
+        <td><%= @project.description %></td>
+        <td><%= @project.owner %></td>
+        <td><%= @project.contact %></td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  <ul>
+    <li style="text-align: center"><%= link_to 'Edit', edit_project_path(@project), class: "button [radius round]" %></li>
+    <li style="text-align: center"><%= link_to 'All projects', projects_path , class:  "[large] button [alert success secondary] [disabled]"%></li> 
+  </ul>
+
+
+
+
+
+<p style="text-align: center"><%= link_to 'Add a Comment', new_project_comment_path(@project), class: "button [radius round]" %></p>
+<br>
+<table class="comment">
+  <thead>
+    <tr>
+      <th style="text-align: center">comment</th>
+      <th style="text-align: center">By</th>
+      <th style="text-align: center">date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>  
+      <% @project.comments.each do |comment|%>
+      <td><%= comment.comment %></td>
+      <td><%= current_user.email %></td>
+      <td><%= comment.created_at.strftime('%b %d, %Y at %I:%M %p') %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

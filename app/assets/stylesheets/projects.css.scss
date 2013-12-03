@@ -1,0 +1,38 @@
+// Place all the styles related to the projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+	text-align: center;
+}
+h3 {
+	padding-top: 15px;
+}
+
+.search-bar {
+
+}
+
+.input_height {
+	input{
+		margin-top: 5px;
+		height: 38px;
+		width: 126%;
+	}
+}
+
+td {
+	text-align: center;
+}
+
+
+body {
+    z-index:5;
+    background-image:url('espi/app/assets/images/website_background');
+  
+    width:100%;
+    height:100px;
+}
+.actions {
+	margin-top: 5px;
+}

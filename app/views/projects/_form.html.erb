@@ -1,0 +1,318 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="row">
+    <div class=""><div class="medium-2 large-3 columns"><h3><%= f.label :name ,"Project Name: "%></h3></div></div><br>
+    <div class="medium-2 large-9 columns "><%= f.text_field :name %></div>
+  </div>
+
+  <div class="row">
+    <div class="medium-2 large-3 columns"><h3>Image</h3></div><br>
+    <div class="medium-2 large-9 columns "><%= f.file_field :photo %></div>
+  </div>
+  
+  <div class="row">
+    <div class="medium-2 large-3 columns"><h3><%= f.label :country %></h3></div><br>
+    <div class="medium-2 large-9 columns "><%= f.select :country, [
+      ['Choose a Country',""],
+      ['Afghanistan','Afghanistan'],
+      ['Akrotiri','Akrotiri'],
+      ['Albania','Albania'],
+      ['Algeria','Algeria'],
+      ['American Samoa','American Samoa'],
+      ['Andorra','Andorra'],
+      ['Angola','Angola'],
+      ['Anguilla','Anguilla'],
+      ['Antarctica','Antarctica'],
+      ['Argentina','Argentina'],
+      ['Armenia','Armenia'],
+      ['Aruba','Aruba'],
+      ['Australia','Australia'],
+      ['Austria','Austria'],
+      ['Azerbaijan','Azerbaijan'],
+      ['Bahrain','Bahrain'],
+      ['Bangladesh','Bangladesh'],
+      ['Barbados','Barbados'],
+      ['Bassas da India','Bassas da India'],
+      ['Belarus','Belarus'],
+      ['Belgium','Belgium'],
+      ['Belize','Belize'],
+      ['Benin','Benin'],
+      ['Bermuda','Bermuda'],
+      ['Bhutan','Bhutan'],
+      ['Bolivia','Bolivia'],
+      ['Bosnia and Herzegovina','Bosnia and Herzegovina'],
+      ['Botswana','Botswana'],
+      ['Bouvet Island','Bouvet Island'],
+      ['Brazil','Brazil'],
+      ['British Indian Ocean Territory','British Indian Ocean Territory'],
+      ['British Virgin Islands','British Virgin Islands'],
+      ['Brunei','Brunei'],
+      ['Bulgaria','Bulgaria'],
+      ['Burkina Faso','Burkina Faso'],
+      ['Burma','Burma'],
+      ['Burundi','Burundi'],
+      ['Cambodia','Cambodia'],
+      ['Cameroon','Cameroon'],
+      ['Canada','Canada'],
+      ['Cape Verde','Cape Verde'],
+      ['Cayman Islands','Cayman Islands'],
+      ['Central African Republic','Central African Republic'],
+      ['Chad','Chad'],
+      ['Chile','Chile'],
+      ['China','China'],
+      ['Christmas Island','Christmas Island'],
+      ['Clipperton Island','Clipperton Island'],
+      ['Colombia','Colombia'],
+      ['Comoros','Comoros'],
+      ['Cook Islands','Cook Islands'],
+      ['Coral Sea Islands','Coral Sea Islands'],
+      ['Costa Rica','Costa Rica'],
+      ['Croatia','Croatia'],
+      ['Cuba','Cuba'],
+      ['Cyprus','Cyprus'],
+      ['Czech Republic','Czech Republic'],
+      ['Denmark','Denmark'],
+      ['Dhekelia','Dhekelia'],
+      ['Djibouti','Djibouti'],
+      ['Dominica','Dominica'],
+      ['Dominican Republic','Dominican Republic'],
+      ['Ecuador','Ecuador'],
+      ['Egypt','Egypt'],
+      ['El Salvador','El Salvador'],
+      ['Equatorial Guinea','Equatorial Guinea'],
+      ['Eritrea','Eritrea'],
+      ['Estonia','Estonia'],
+      ['Ethiopia','Ethiopia'],
+      ['Europa Island','Europa Island'],
+      ['Falkland Islands (Islas Malvinas)','Falkland Islands (Islas Malvinas)'],
+      ['Faroe Islands','Faroe Islands'],
+      ['Fiji','Fiji'],
+      ['Finland','Finland'],
+      ['France','France'],
+      ['French Guiana','French Guiana'],
+      ['French Polynesia','French Polynesia'],
+      ['French Southern and Antarctic Lands','French Southern and Antarctic Lands'],
+      ['Gabon','Gabon'],
+      ['Gambia, The','Gambia, The'],
+      ['Gaza Strip','Gaza Strip'],
+      ['Georgia','Georgia'],
+      ['Germany','Germany'],
+      ['Ghana','Ghana'],
+      ['Gibraltar','Gibraltar'],
+      ['Glorioso Islands','Glorioso Islands'],
+      ['Greece','Greece'],
+      ['Greenland','Greenland'],
+      ['Grenada','Grenada'],
+      ['Guadeloupe','Guadeloupe'],
+      ['Guam','Guam'],
+      ['Guatemala','Guatemala'],
+      ['Guernsey','Guernsey'],
+      ['Guinea','Guinea'],
+      ['Guinea-Bissau','Guinea-Bissau'],
+      ['Guyana','Guyana'],
+      ['Haiti','Haiti'],
+      ['Heard Island and McDonald Islands','Heard Island and McDonald Islands'],
+      ['Holy See (Vatican City)','Holy See (Vatican City)'],
+      ['Honduras','Honduras'],
+      ['Hong Kong','Hong Kong'],
+      ['Hungary','Hungary'],
+      ['Iceland','Iceland'],
+      ['India','India'],
+      ['Indonesia','Indonesia'],
+      ['Iran','Iran'],
+      ['Iraq','Iraq'],
+      ['Ireland','Ireland'],
+      ['Isle of Man','Isle of Man'],
+      ['Israel','Israel'],
+      ['Italy','Italy'],
+      ['Jamaica','Jamaica'],
+      ['Jan Mayen','Jan Mayen'],
+      ['Japan','Japan'],
+      ['Jersey','Jersey'],
+      ['Jordan','Jordan'],
+      ['Juan de Nova Island','Juan de Nova Island'],
+      ['Kazakhstan','Kazakhstan'],
+      ['Kenya','Kenya'],
+      ['Kiribati','Kiribati'],
+      ['Korea, North','Korea, North'],
+      ['Korea, South','Korea, South'],
+      ['Kuwait','Kuwait'],
+      ['Kyrgyzstan','Kyrgyzstan'],
+      ['Laos','Laos'],
+      ['Latvia','Latvia'],
+      ['Lebanon','Lebanon'],
+      ['Lesotho','Lesotho'],
+      ['Liberia','Liberia'],
+      ['Libya','Libya'],
+      ['Liechtenstein','Liechtenstein'],
+      ['Lithuania','Lithuania'],
+      ['Luxembourg','Luxembourg'],
+      ['Macau','Macau'],
+      ['Macedonia','Macedonia'],
+      ['Madagascar','Madagascar'],
+      ['Malawi','Malawi'],
+      ['Malaysia','Malaysia'],
+      ['Maldives','Maldives'],
+      ['Mali','Mali'],
+      ['Malta','Malta'],
+      ['Marshall Islands','Marshall Islands'],
+      ['Martinique','Martinique'],
+      ['Mauritania','Mauritania'],
+      ['Mauritius','Mauritius'],
+      ['Mayotte','Mayotte'],
+      ['Mexico','Mexico'],
+      ['Micronesia, Federated States of','Micronesia, Federated States of'],
+      ['Moldova','Moldova'],
+      ['Monaco','Monaco'],
+      ['Mongolia','Mongolia'],
+      ['Montserrat','Montserrat'],
+      ['Morocco','Morocco'],
+      ['Mozambique','Mozambique'],
+      ['Namibia','Namibia'],
+      ['Nauru','Nauru'],
+      ['Navassa Island','Navassa Island'],
+      ['Nepal','Nepal'],
+      ['Netherlands','Netherlands'],
+      ['Netherlands Antilles','Netherlands Antilles'],
+      ['New Caledonia','New Caledonia'],
+      ['New Zealand','New Zealand'],
+      ['Nicaragua','Nicaragua'],
+      ['Niger','Niger'],
+      ['Nigeria','Nigeria'],
+      ['Niue','Niue'],
+      ['Norfolk Island','Norfolk Island'],
+      ['Northern Mariana Islands','Northern Mariana Islands'],
+      ['Norway','Norway'],
+      ['Oman','Oman'],
+      ['Pakistan','Pakistan'],
+      ['Palau','Palau'],
+      ['Panama','Panama'],
+      ['Papua New Guinea','Papua New Guinea'],
+      ['Paracel Islands','Paracel Islands'],
+      ['Paraguay','Paraguay'],
+      ['Peru','Peru'],
+      ['Philippines','Philippines'],
+      ['Pitcairn Islands','Pitcairn Islands'],
+      ['Poland','Poland'],
+      ['Portugal','Portugal'],
+      ['Puerto Rico','Puerto Rico'],
+      ['Qatar','Qatar'],
+      ['Reunion','Reunion'],
+      ['Romania','Romania'],
+      ['Russia','Russia'],
+      ['Rwanda','Rwanda'],
+      ['Saint Helena','Saint Helena'],
+      ['Saint Kitts and Nevis','Saint Kitts and Nevis'],
+      ['Saint Lucia','Saint Lucia'],
+      ['Saint Pierre and Miquelon','Saint Pierre and Miquelon'],
+      ['Saint Vincent and the Grenadines','Saint Vincent and the Grenadines'],
+      ['Samoa','Samoa'],
+      ['San Marino','San Marino'],
+      ['Sao Tome and Principe','Sao Tome and Principe'],
+      ['Saudi Arabia','Saudi Arabia'],
+      ['Senegal','Senegal'],
+      ['Serbia and Montenegro','Serbia and Montenegro'],
+      ['Seychelles','Seychelles'],
+      ['Sierra Leone','Sierra Leone'],
+      ['Singapore','Singapore'],
+      ['Slovakia','Slovakia'],
+      ['Slovenia','Slovenia'],
+      ['Solomon Islands','Solomon Islands'],
+      ['Somalia','Somalia'],
+      ['South Africa','South Africa'],
+      ['South Georgia and the South Sandwich Islands','South Georgia and the South Sandwich Islands'],
+      ['Spain','Spain'],
+      ['Spratly Islands','Spratly Islands'],
+      ['Sri Lanka','Sri Lanka'],
+      ['Sudan','Sudan'],
+      ['Suriname','Suriname'],
+      ['Svalbard','Svalbard'],
+      ['Swaziland','Swaziland'],
+      ['Sweden','Sweden'],
+      ['Switzerland','Switzerland'],
+      ['Syria','Syria'],
+      ['Taiwan','Taiwan'],
+      ['Tajikistan','Tajikistan'],
+      ['Tanzania','Tanzania'],
+      ['Thailand','Thailand'],
+      ['Timor-Leste','Timor-Leste'],
+      ['Togo','Togo'],
+      ['Tokelau','Tokelau'],
+      ['Tonga','Tonga'],
+      ['Trinidad and Tobago','Trinidad and Tobago'],
+      ['Tromelin Island','Tromelin Island'],
+      ['Tunisia','Tunisia'],
+      ['Turkey','Turkey'],
+      ['Turkmenistan','Turkmenistan'],
+      ['Turks and Caicos Islands','Turks and Caicos Islands'],
+      ['Tuvalu','Tuvalu'],
+      ['Uganda','Uganda'],
+      ['Ukraine','Ukraine'],
+      ['United Arab Emirates','United Arab Emirates'],
+      ['United Kingdom','United Kingdom'],
+      ['United States','United States'],
+      ['Uruguay','Uruguay'],
+      ['Uzbekistan','Uzbekistan'],
+      ['Vanuatu','Vanuatu'],
+      ['Venezuela','Venezuela'],
+      ['Vietnam','Vietnam'],
+      ['Virgin Islands','Virgin Islands'],
+      ['Wake Island','Wake Island'],
+      ['Wallis and Futuna','Wallis and Futuna'],
+      ['West Bank','West Bank'],
+      ['Western Sahara','Western Sahara'],
+      ['Yemen','Yemen'],
+      ['Zambia','Zambia']
+      ]%></div>
+  </div>
+
+
+
+
+  <div class="row">
+
+    <div class=""><div class="medium-2 large-3 columns"><h3><%= f.label :university %></h3></div></div><br>
+    <div class="medium-2 large-9 columns "><%= f.text_field :university %></div>
+  </div>
+  <div class="row">
+    <div class=""><div class="medium-2 large-3 columns"><h3><%= f.label :major %></h3></div></div><br>
+    <div class="medium-2 large-9 columns "><%= f.text_field :major %></div>
+  </div>
+  <div class="row">
+    <div class=""><div class="medium-2 large-3 columns"><h3><%= f.label :description %></h3></div></div><br>
+    <div class="medium-2 large-9 columns "><%= f.text_area :description %></div>
+  </div>
+  <div class="row">
+    <div class=""><div class="medium-2 large-3 columns"><h3><%= f.label :owner %></h3></div></div><br>
+    <div class="medium-2 large-9 columns "><%= f.text_field :owner %></div>
+  </div>
+  <div class="row">
+    <div class=""><div class="medium-2 large-3 columns"><h3><%= f.label :contact %></h3></div></div><br>
+    <div class="medium-2 large-9 columns "><%= f.text_field :contact , title: "Enter your email or phone number", data: {tooltip: true} %></div>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+
+  <div class="actions">
+    <div class="row">
+    <div class="medium-4 large- columns "></div>
+    <div class="medium-4 large-9 columns ">
+    <%= f.submit "Create Project", class: "button [radius round]"%>
+    </div>
+  </div>
+  </div>
+<% end %>
